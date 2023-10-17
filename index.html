@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="logic.css" />
     <title>lOGIC gAME</title>
   </head>
   <body>
     <div class="logic-container">
       <div class="left-side-cont">
         <div class="directions">
-          <button class="logic-dir">^</button>
-          <button class="logic-dir">></button>
-          <button class="logic-dir"><</button>
-          <button class="logic-dir">@</button>
+          <button class="logic-dir"><i class="fa-solid fa-arrow-up rotate-left"></i></button>
+          <button class="logic-dir"><i class="fa-solid fa-turn-down"></i></button>
+          <button class="logic-dir"><i class="fa-solid fa-turn-up"></i></button>
+          <button class="logic-dir"><i class="fa-solid fa-repeat"></i></button>
         </div>
       </div>
         <div class="right-side-cont">
@@ -57,6 +57,8 @@
                 <button id="reset-btn">Reset</button>
             </div>
     </div>
-    <script src="main.js"></script>
+
+    <script src="https://kit.fontawesome.com/cda065bf16.js" crossorigin="anonymous"></script>
+    <script src="logic.js"></script>
   </body>
 </html>

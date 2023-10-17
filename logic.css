@@ -1,3 +1,7 @@
+.rotate-left{
+  transform: rotate(90deg);
+}
+
 .logic-container {
   display: flex;
   flex-direction: row;
