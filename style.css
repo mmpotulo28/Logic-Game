@@ -1,0 +1,130 @@
+.logic-container {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid green;
+  background-color: grey;
+  border-radius: 20px;
+  gap: 10px;
+  padding: 20px;
+  width: fit-content;
+}
+
+.logic-container .left-side-cont {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+}
+
+.logic-container .left-side-cont .directions {
+  display: block;
+}
+
+.logic-container .left-side-cont .logic-dir {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  background-color: lightgrey;
+  box-shadow: -2px -2px 2px grey;
+}
+
+.logic-container .left-side-cont .logic-dir:hover {
+  background-color: lightgreen;
+  scale: 0.9;
+}
+
+.logic-container .right-side-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: fit-content;
+}
+
+.logic-container .right-side-cont .logic-game-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-gap: 0;
+  width: fit-content;
+  height: fit-content;
+  background-color: lightgreen;
+  overflow: hidden;
+  border: 2px solid green;
+}
+
+.logic-container .right-side-cont .logic-game-board span {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  /* border: 1px solid grey; */
+}
+
+.logic-container .right-side-cont .dir-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: fit-content;
+}
+
+.logic-container .right-side-cont .dir-box .play-dir {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  background-color: lightgrey;
+  box-shadow: -2px -2px 2px grey;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.logic-container .right-side-cont .play-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  gap: 10px;
+  height: fit-content;
+}
+
+.logic-container .right-side-cont .play-buttons button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+}
+
+.logic-container .right-side-cont .play-buttons button:hover {
+  scale: 1.1;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.logic-container .right-side-cont .play-buttons #play-btn {
+  background-color: green;
+}
+
+.logic-container .right-side-cont .play-buttons #reset-btn {
+  background-color: red;
+}
