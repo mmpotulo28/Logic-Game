@@ -72,7 +72,9 @@ dirOptions.forEach((dirOption) => {
 
 //play button
 playBtn.addEventListener('click', () => {
-    playLogic(startCellId, dirBoxArr)
+    //play logic
+    playLogic(startCellId, 0)
+
 });
 
 //reset button
@@ -95,11 +97,9 @@ resetBtn.addEventListener('click', () => {
 });
 
 //play logic
-function playLogic(currentID, dirBoxArr) {
+function playLogic(currentID, i) {
 
-    //loop through the directions array
     for (let i = 0; i < dirBoxArr.length; i++) {
-
         //get the class name of the icon in dirBoxArr
         let iconClass = dirBoxex[i].querySelector('i').className.split(' ')[1];
         // console.log(iconClass);
@@ -111,9 +111,9 @@ function playLogic(currentID, dirBoxArr) {
             //check if the current cell is not in the pattern
             if (!currentPattern.includes(currentID)) {
                 alert('Wrong Move! you lose');
-                break;
             } else {
-                move(currentID)
+                //wait for function to finish moving the cell
+
             }
 
         } else if (iconClass === 'fa-turn-down') {
@@ -123,7 +123,7 @@ function playLogic(currentID, dirBoxArr) {
             //check if the current cell is not in the pattern
             if (!currentPattern.includes(currentID)) {
                 alert('Wrong Move! you lose');
-                break;
+                return;
             } else {
                 move(currentID)
             }
@@ -132,18 +132,21 @@ function playLogic(currentID, dirBoxArr) {
             //move the current cell to the next up cell
             currentID = parseInt(currentID) - 5;
 
+
             //check if the current cell is not in the pattern
             if (!currentPattern.includes(currentID)) {
                 alert('Wrong Move! you lose');
-                break;
+                return;
             } else {
                 move(currentID)
             }
         }
+
+        //check if the current cell is the last cell
+        checkForWin(currentID);
+
     }
 
-    //check for win
-    checkForWin(currentID);
 }
 
 //move object function
@@ -152,6 +155,7 @@ function move(currentID) {
     gridCells.forEach((gridCell) => {
         if (gridCell.id === currentID.toString()) {
             gridCell.innerHTML = humanObj;
+            console.log("Moved to Cell: " + gridCell.id);
         } else {
             gridCell.classList.remove('active');
             gridCell.innerHTML = '';
